@@ -34,6 +34,10 @@ class MerchantInfo extends Model
   {
     parent::__construct([], false);
 
+    if (!$this->authToken) {
+      $this->authToken = $merchantInfo['authToken'] ?? Vipps::getConfig()->authToken ?? null;
+    }
+    
     if (!$this->merchantSerialNumber) {
       $this->merchantSerialNumber = $merchantInfo['merchantSerialNumber'] ?? Vipps::getConfig()->merchantSerialNumber ?? null;
     }
