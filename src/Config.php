@@ -18,6 +18,7 @@ class Config extends Model
 {
   /** @var array */
   protected $fields = [
+    'authToken',
     'endpoint',
     'clientId',
     'clientSecret',
