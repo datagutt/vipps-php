@@ -52,7 +52,7 @@ class Vipps
    * @param SystemInfo $systemInfo
    * @return void
    */
-  public static function setSystemInfo(SystemInfo $systemInfo): ? void {
+  public static function setSystemInfo(SystemInfo $systemInfo): void {
     self::$systemInfo = $systemInfo;
   }
 
