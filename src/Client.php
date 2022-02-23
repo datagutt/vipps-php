@@ -49,7 +49,11 @@ class Client
       'base_uri' => Vipps::getConfig()->endpoint . '/' . trim($endpoint, '/') . '/',
       'headers' => [
         'Content-Type' => 'application/json',
-        'Ocp-Apim-Subscription-Key' => Vipps::getConfig()->ecommerceSubscriptionKey
+        'Ocp-Apim-Subscription-Key' => Vipps::getConfig()->ecommerceSubscriptionKey,
+        'Vipps-System-Name' => Vipps::getSystemInfo()->systemName,
+        'Vipps-System-Version' => Vipps::getSystemInfo()->systemVersion,
+        'Vipps-System-Plugin-Name' => Vipps::getSystemInfo()->systemPluginName,
+        'Vipps-System-Plugin-Version' => Vipps::getSystemInfo()->systemPluginVersion,
       ]
     ]);
 

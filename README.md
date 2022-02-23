@@ -23,6 +23,7 @@ composer require apility/vipps
 
 use Vipps\Vipps;
 use Vipps\Config;
+use Vipps\SystemInfo;
 use Vipps\Ecommerce\Payment;
 
 // The given values are just for illustration
@@ -35,6 +36,12 @@ Vipps::setConfig(Config::create([
   'ecommerceSubscriptionKey' => '123456789abcdef123456789abcdef12',
   'callbackPrefix' => 'https://domain.tld/callback',
   'fallBack' => 'https://domain.tld/fallback'
+]));
+Vipps::setSystemInfo(SystemInfo::create([
+  'systemName' => 'vipps-php',
+  'systemVersion' => '2.0',
+  'systemPluginName' => 'vipps-php-plugin',
+  'systenPluginVersion' => '1.0'
 ]));
 
 $payment = Payment::create([

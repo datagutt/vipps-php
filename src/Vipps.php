@@ -12,6 +12,9 @@ class Vipps
   /** @var Config Holds the global configuration */
   private static $config;
 
+  /** @var Config Holds the system information */
+  private static $systemInfo;
+
   /**
    * Retrieves the global configuration
    *
@@ -31,6 +34,26 @@ class Vipps
   public static function setConfig(Config $config): void
   {
     self::$config = $config;
+  }
+
+  /**
+   * Gets the system information
+   * 
+   * @param SystemInfo $systemInfo
+   * @return void
+   */
+  public static function getSystemInfo(): ? SystemInfo {
+    return self::$systemInfo;
+  }
+
+  /**
+   * Sets the system information
+   * 
+   * @param SystemInfo $systemInfo
+   * @return void
+   */
+  public static function setSystemInfo(SystemInfo $systemInfo): ? void {
+    self::$systemInfo = $systemInfo;
   }
 
   /**
